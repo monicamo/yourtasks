@@ -109,6 +109,53 @@ export const formButtonTrigger = trigger('formButton', [
   ])
 ])
 
+export const flyInOutTrigger =
+  trigger('flyInOut', [
+    transition(':enter', [
+      style({
+        width: '100%',
+        transform: 'translateX(-100%)',
+        opacity: 0
+      }),
+      group([
+        animate('0.3s 0.1s ease', style({
+          transform: 'translateX(0)',
+          width: '*'
+        })),
+        animate('0.3s ease', style({
+          opacity: 1
+        }))
+      ])
+    ]),
+    transition(':leave', [
+      group([
+        animate('0.3s ease', style({
+          transform: 'translateX(100%)',
+          width: '*'
+        })),
+        animate('0.3s 0.2s ease', style({
+          opacity: 0
+        }))
+      ])
+    ])
+  ])
+
 
 // https://cubic-bezier.com/#.28,.84,.91,0
 // https://easings.net/
+
+/*
+O passo-a-passo:
+
+A animação possui dois estados, ':enter' e ':leave', que são acionados quando o elemento é adicionado ou removido do DOM, respectivamente.
+
+Para o estado ':enter', primeiro é definido um estilo inicial utilizando o método 'style', onde o elemento é configurado com uma largura de 100%, deslocado para a esquerda em 100% usando a propriedade 'transform' e com opacidade 0.
+
+Em seguida, é definido um grupo de animações utilizando o método 'group', onde duas animações serão executadas simultaneamente.
+
+A primeira animação utiliza o método 'animate' e define uma duração de 0.3s, um atraso de 0.1s e uma função de timing 'ease'. Essa animação aplica um estilo ao elemento que o move de sua posição original (-100%) para a posição final (0) e ajusta sua largura para '*' que significa tamanho automático.
+
+A segunda animação também utiliza o método 'animate' e define uma duração de 0.3s e uma função de timing 'ease'. Essa animação aplica um estilo ao elemento que define sua opacidade para 1, fazendo com que ele apareça.
+
+Para o estado ':leave', é definido um grupo de animações semelhante, mas as animações movem o elemento para a direita em 100% usando a propriedade 'transform', e definem sua opacidade para 0, fazendo com que ele desapareça.
+*/
