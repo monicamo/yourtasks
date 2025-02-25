@@ -70,7 +70,7 @@ export const checkButtonTrigger = trigger('checkButton', [
 export const filterTrigger = trigger('filterAnimation', [
   transition(':enter', [
     style({ opacity: 0, width: 0 }),
-    animate('1800ms ease-out', keyframes([
+    animate('400ms ease-out', keyframes([
       style({ offset: 0, opacity: 0, width: 0 }),
       style({ offset: 0.8, opacity: 0.5, width: '*', backgroundColor: 'lightgreen' }),
       style({ offset: 1, opacity: 1, width: '*', backgroundColor: 'lightblue' })

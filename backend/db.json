@@ -18,7 +18,7 @@
       "id": 4,
       "descricao": "Preencher formulário de inscrição",
       "categoria": "Estudos",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "prioridade": "Normal"
     },
     {
@@ -31,21 +31,14 @@
     {
       "id": 6,
       "descricao": "Ler",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Estudos",
       "prioridade": "Alta"
     },
     {
-      "id": 7,
-      "descricao": "Teste 1",
-      "statusFinalizado": false,
-      "categoria": "Trabalho",
-      "prioridade": "Normal"
-    },
-    {
       "id": 8,
       "descricao": "Estudar Angular",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Estudos",
       "prioridade": "Alta"
     }
