@@ -7,6 +7,7 @@ import { Tarefa } from '../interface/tarefa';
 import {
   checkButtonTrigger,
   filterTrigger,
+  formButtonTrigger,
   highlightedStateTrigger,
   showStateTrigger,
 } from '../animations';
@@ -15,11 +16,17 @@ import {
   selector: 'app-lista-tarefas',
   templateUrl: './lista-tarefas.component.html',
   styleUrls: ['./lista-tarefas.component.css'],
-  animations: [highlightedStateTrigger, showStateTrigger, checkButtonTrigger, filterTrigger],
+  animations: [
+    highlightedStateTrigger,
+    showStateTrigger,
+    checkButtonTrigger,
+    filterTrigger,
+    formButtonTrigger,
+  ],
 })
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];
-  formAberto: boolean = false;
+  formAberto: boolean = true;
   categoria: string = '';
   validado: boolean = false;
   indexTarefa: number = -1;
@@ -31,8 +38,8 @@ export class ListaTarefasComponent implements OnInit {
     id: [0],
     descricao: ['', Validators.required],
     statusFinalizado: [false, Validators.required],
-    categoria: ['', Validators.required],
-    prioridade: ['', Validators.required],
+    categoria: ['Casa', Validators.required],
+    prioridade: ['Alta', Validators.required],
   });
 
   constructor(

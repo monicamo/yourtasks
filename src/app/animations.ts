@@ -75,6 +75,24 @@ export const filterTrigger = trigger('filterAnimation', [
     ])),
   ]),
   transition(':leave', [
-    animate('400ms ease-out', style({ opacity: 0, width: 0 }))
+    animate('1300ms cubic-bezier(.13,1.79,.81,-1.2)',  style({ opacity: 0, width: 0 }))
   ])
 ]);
+
+export const formButtonTrigger = trigger('formButton', [
+  transition('invalid => valid', [
+    animate(200, style({
+      backgroundColor: '#63b77C'
+    })),
+    animate(100, style({
+      transform: 'scale(1.1)'
+    })),
+    animate(200, style({
+      transform: 'scale(1)'
+    })),
+  ])
+])
+
+
+// https://cubic-bezier.com/#.28,.84,.91,0
+// https://easings.net/
