@@ -6,6 +6,7 @@ import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
 import {
   checkButtonTrigger,
+  filterTrigger,
   highlightedStateTrigger,
   showStateTrigger,
 } from '../animations';
@@ -14,7 +15,7 @@ import {
   selector: 'app-lista-tarefas',
   templateUrl: './lista-tarefas.component.html',
   styleUrls: ['./lista-tarefas.component.css'],
-  animations: [highlightedStateTrigger, showStateTrigger, checkButtonTrigger],
+  animations: [highlightedStateTrigger, showStateTrigger, checkButtonTrigger, filterTrigger],
 })
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];
