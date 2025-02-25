@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
@@ -12,6 +11,7 @@ import {
   highlightedStateTrigger,
   shakeTrigger,
   showStateTrigger,
+  listStateTrigger
 } from '../animations';
 import { Subscription } from 'rxjs';
 
@@ -26,7 +26,8 @@ import { Subscription } from 'rxjs';
     filterTrigger,
     formButtonTrigger,
     flyInOutTrigger,
-    shakeTrigger
+    shakeTrigger,
+    listStateTrigger
   ],
 })
 export class ListaTarefasComponent implements OnInit {
