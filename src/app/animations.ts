@@ -1,5 +1,6 @@
 import {
   animate,
+  group,
   keyframes,
   state,
   style,
@@ -81,12 +82,27 @@ export const filterTrigger = trigger('filterAnimation', [
 
 export const formButtonTrigger = trigger('formButton', [
   transition('invalid => valid', [
+    group([
+      animate(200, style({
+        backgroundColor: '#63b77C'
+      })),
+      animate(100, style({
+        transform: 'scale(1.1)'
+      })),
+    ]),
     animate(200, style({
-      backgroundColor: '#63b77C'
+      transform: 'scale(1)'
     })),
-    animate(100, style({
-      transform: 'scale(1.1)'
-    })),
+  ]),
+  transition('valid => invalid', [
+    group([
+      animate(200, style({
+        backgroundColor: '#6C5757D'
+      })),
+      animate(100, style({
+        transform: 'scale(1.1)'
+      })),
+    ]),
     animate(200, style({
       transform: 'scale(1)'
     })),
